@@ -1,0 +1,92 @@
+block variables
+  - var colorLine = 'hedden text - yellow line'
+  - var articleItem1 = `<span></span>Registre-se`
+  - var articleItem2 = `Confirme seu<span>e-mail e seu número de telefone</span> `
+  - var articleItem3 = ' <span>Vá para a seção </span>Bônus e presentes'
+  - var articleItem4 = '<span>Insira o </span>código promocional</span>'
+
+mixin article1(id, classElem)
+  li(id=`instructionNumber${id}`, class=`${classElem}`)
+    .instruction__article
+      p.instruction__action!= articleItem1
+
+mixin article2(id, classElem)
+  li(id=`instructionNumber${id}`, class=`${classElem}`)
+    .instruction__article
+      p.instruction__action!= articleItem2
+
+mixin article3(id, classElem)
+  li(id=`instructionNumber${id}`, class=`${classElem}`)
+    .instruction__article
+      p.instruction__action!= articleItem3
+
+mixin article4(id, classElem)
+  li(id=`instructionNumber${id}`, class=`${classElem}`)
+    .instruction__article
+      p.instruction__action!= articleItem4
+
+block instruction 
+
+  #load.instruction 
+    //- .instruction__line=colorLine
+    //- .instruction__image-players 
+      picture
+        source(srcset="images/players.webp")
+        img.instruction__img-players( src="images/players.png" alt="players")
+        PICTURE FOR  LAYOUT
+    //- .instruction__image-back 
+    //-   picture 
+    //-     source(srcset="images/instruction-back.webp")
+    //-     img.instruction__img-back(src="images/instruction-back.jpg")
+    ul.instruction__items
+      +article1('One', 'instruction__number')
+      +article2('Two', 'instruction__number')
+      +article3('Three', 'instruction__number')
+      +article4('Four', 'instruction__number')
+
+
+      
+      //- li#instructionNumberOne.instruction__number
+      //-   .instruction__article
+      //-     p.instruction__action.
+      //-       <span></span>
+      //-           Зарегистрируйся
+      //- li#instructionNumberTwo.instruction__number
+      //-   .instruction__article
+      //-     p.instruction__action.
+      //-       <span>Введи</span>
+      //-           промокод 2021RB
+      //- li#instructionNumberThree.instruction__number
+      //-   .instruction__article
+      //-     p.instruction__action.
+      //-       <span>Внеси</span>
+      //-           первый депозит
+      //-       <span>до 4600 грн</span>
+      //- li#instructionNumberFour.instruction__number
+      //-   .instruction__article
+      //-     p.instruction__action.
+      //-       <span>Получи </span>свой&nbspбонус <span>на первый депозит</span>
+  
+
+//-   block variables 
+//-   -
+//-     var colorLine = 'hedden text - yellow line'
+//-     var instrItems = [
+//-       {instrItem:'<span></span> Зарегистрируйся'},{instrItem:'<span>Введи</span>промокод 2021RB'},{instrItem:'<span>Внеси</span>первый депозит<span>до 4600 грн</span>'},{instrItem:'<span>Получи </span>свой&nbspбонус <span>на первый депозит</span>'},
+//-     ]
+    
+//- #load.instruction 
+//-   .instruction__line=colorLine
+//-   //- .instruction__image-players 
+//-     picture
+//-       source(srcset="images/players.webp")
+//-       img.instruction__img-players( src="images/players.png" alt="players")
+//-   .instruction__image-back 
+//-     picture 
+//-       source(srcset="images/instruction-back.webp")
+//-       img.instruction__img-back(src="images/instruction-back.jpg")
+//-   ul.instruction__items
+//-     for i in instrItems
+//-       li#instructionNumberOne.instruction__number
+//-         .instruction__article
+//-           p.instruction__action!= i.instrItem

@@ -1,0 +1,33 @@
+- 
+  var proposition1 = `<span>Прокачай</span> свой смартфон с <span class='gradient'>приложением</span> от Betandyou`
+  var earnBonus = 'Скачивай, зарабатывай с нами и будь в курсе всех событий!'
+  var download = `скачать:`
+  var ruleIos = `Правила и условия IOS`
+  var ruleAndroid = `Правила и условия ANDROID`
+
+section.page-ios
+  .container
+    .page-ios__inner 
+      h1.page-ios__title!= proposition1
+      //- h2.page-ios__title!= proposition2
+      p.page-ios__slogan= earnBonus
+      .page-ios__actions
+        p.page-ios__action-title= download
+        .page-ios__box 
+          a.page-ios__image(href='#') 
+            svg.page-ios__svg 
+              use(xlink:href="images/sprite.svg#icon-iosapp")
+            a.page-ios__rules(href="https://betandyou.com/information/rules/")=ruleIos  
+        .page-ios__image-main
+          
+            picture
+              source(srcset='images/main-pictureMobile.webp 576w, images/main-picture.webp' type='image/webp')
+              source(srcset='images/main-picture.png 1px', type='image/png' )
+              img.page-ios__img(src='images/main-picture.png' ,alt='phone')
+        .page-ios__box 
+          a.page-ios__image(href='#') 
+            svg.page-ios__svg 
+              use(xlink:href="images/sprite.svg#icon-android")
+          a.page-ios__rules(href="https://betandyou.com/information/rules/")=ruleAndroid
+        .page-ios__ellipse
+

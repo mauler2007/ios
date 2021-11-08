@@ -1,0 +1,25 @@
+mixin switcher(id,name,state)
+    .langCheck__item(class=`langCheck__item-${name} ${state}`, for=id)
+      a.langContext(href="#")=name        
+        .icon(class=`icon-${name}`)
+
+mixin switcherArrow(id,name,state)
+    .langCheck__item(class=`langCheck__item-${name} ${state}`, for=id)
+      a.langContext(href="#")=name        
+        .icon(class=`icon-${name}`)
+        span.arrow
+
+.langCheck
+    .langCheck__wrapper
+      +switcherArrow('','pt','selected')
+      +switcher('ru','ru','active')
+      //- +switcher('ru','ru','')
+      //- +switcher('br','br','')
+      +switcher('en','en','')
+      +switcher('es','es','')
+      +switcher('fi','fi','')
+      +switcher('de','de','')
+      +switcher('el','el','')
+      +switcher('ru','ru','')
+      +switcher('fr','fr','')
+        
